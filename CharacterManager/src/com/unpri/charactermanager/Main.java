@@ -1,4 +1,3 @@
-
 package com.unpri.charactermanager;
 
 import com.unpri.charactermanager.model.Character;
@@ -77,6 +76,17 @@ public class Main {
 
         System.out.println("Apakah objek Aragorn sama? "
                 + (c1 == anotherAragorn));
+
+        // UJI OBJECT REFERENCE
+        System.out.println("\n--- UJI OBJECT REFERENCE ---");
+
+        Character a = new Character("Aragorn", CharacterType.WARRIOR);
+        Character b = a;
+
+        b.setLevel(8);
+
+        System.out.println("Level melalui a: " + a.getLevel());
+        System.out.println("Apakah a dan b objek yang sama? " + (a == b));
 
         // READ
         System.out.println("\n--- READ: DAFTAR KARAKTER ---");

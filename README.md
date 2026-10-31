@@ -54,7 +54,6 @@ Screenshot menampilkan daftar tiga karakter, demo kenaikan level, pengaturan man
 https://docs.google.com/document/d/11kVQw9YRiQe1fcBRXk29dbwwZlcLTm3Jvoy2UIiG94k/edit?usp=sharing
 
 ---
-
 # TP5 — Character Manager Sprint #2
 
 ## Deskripsi TP5
@@ -89,17 +88,16 @@ Fitur ini membantu pengguna mengetahui karakter yang memiliki kekuatan serangan 
 
 ## Screenshot Output TP5
 
-## Screenshot Output TP5
-
 ### Screenshot 1 — Pengujian CRUD dan Analytics
 
 ![Output TP5 Bagian 1](CharacterManager/output-tp5-1.png)
 
-### Screenshot 2 — Find Strongest, Defensive Copy, dan Pengujian List Kosong
+### Screenshot 2 — Find Strongest, Defensive Copy, dan Pengujian Object Reference
 
 ![Output TP5 Bagian 2](CharacterManager/output-tp5-2.png)
 
-Screenshot menampilkan hasil pengujian fitur Character Manager TP5, termasuk penambahan karakter, penolakan duplikat, equals, analytics, findStrongest, defensive copy, dan penghapusan karakter.
+Screenshot menampilkan hasil pengujian fitur Character Manager TP5, termasuk penambahan karakter, penolakan duplikat, equals, object reference, analytics, findStrongest, defensive copy, dan penghapusan karakter.
 
 ## Link Google Docs TP5 — Bagian D
+
 [Klik di sini untuk membuka Analisis TP5](https://docs.google.com/document/d/1lJy19MVq7iY5ljzIRNj-N8Visfn0v4yWNbvMsK9RAxE/edit?usp=sharing)
