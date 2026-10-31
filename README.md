@@ -100,4 +100,4 @@ Screenshot menampilkan hasil pengujian fitur Character Manager TP5, termasuk pen
 
 ## Link Google Docs TP5 — Bagian D
 
-[Klik di sini untuk membuka Analisis TP5](https://docs.google.com/document/d/1lJy19MVq7iY5ljzIRNj-N8Visfn0v4yWNbvMsK9RAxE/edit?usp=sharing)
+https://docs.google.com/document/d/1lJy19MVq7iY5ljzIRNj-N8Visfn0v4yWNbvMsK9RAxE/edit?usp=sharing
