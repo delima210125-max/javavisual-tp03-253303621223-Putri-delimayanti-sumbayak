@@ -36,7 +36,9 @@ CharacterManager_TP3/
 
 ## Screenshot Output Program
 
-(CharacterManager/output-program.png)
+## Screenshot Output Program
+
+![Screenshot Output Program](CharacterManager/output-program.png)
 
 Screenshot menampilkan daftar tiga karakter, demo kenaikan level, pengaturan mana, dan hasil pemeriksaan `isAlive()`.
 
