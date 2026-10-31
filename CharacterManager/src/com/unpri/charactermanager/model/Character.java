@@ -1,6 +1,8 @@
 
 package com.unpri.charactermanager.model;
 
+import java.util.Objects;
+
 public class Character {
 
     // Atribut karakter
@@ -92,9 +94,7 @@ public class Character {
     // Setter mana dengan validasi
     public void setMana(int mana) {
         if (mana < 0) {
-            throw new IllegalArgumentException(
-                "Mana tidak boleh negatif"
-            );
+            throw new IllegalArgumentException("Mana tidak boleh negatif");
         }
 
         this.mana = mana;
@@ -108,6 +108,27 @@ public class Character {
     // Menaikkan level
     public void levelUp() {
         setLevel(level + 1);
+    }
+
+    // Membandingkan karakter berdasarkan nama
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Character)) {
+            return false;
+        }
+
+        Character other = (Character) obj;
+        return Objects.equals(this.name, other.name);
+    }
+
+    // Menghasilkan hash berdasarkan nama
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     // Menampilkan informasi karakter

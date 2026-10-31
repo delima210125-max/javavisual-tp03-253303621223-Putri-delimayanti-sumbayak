@@ -52,3 +52,54 @@ Screenshot menampilkan daftar tiga karakter, demo kenaikan level, pengaturan man
 
 ## Link Google Docs — Bagian D
 https://docs.google.com/document/d/11kVQw9YRiQe1fcBRXk29dbwwZlcLTm3Jvoy2UIiG94k/edit?usp=sharing
+
+---
+
+# TP5 — Character Manager Sprint #2
+
+## Deskripsi TP5
+
+TP5 merupakan pengembangan dari proyek TP3. Pada tahap ini, program dilengkapi dengan fitur pengelolaan data karakter menggunakan ArrayList, analisis level, pencarian berdasarkan tipe, serta pengujian object reference.
+
+## Fitur TP5
+
+### Part A — Character Manager
+
+- Menambahkan karakter menggunakan `addCharacter()`.
+- Mencari karakter berdasarkan nama menggunakan `findByName()`.
+- Menghapus karakter menggunakan `removeCharacter()`.
+- Menghitung jumlah karakter menggunakan `getTotalCharacters()`.
+- Mengembalikan salinan daftar karakter menggunakan `getAllCharacters()`.
+- Menggunakan `equals()` untuk membandingkan karakter berdasarkan nama.
+- Menolak penambahan karakter dengan nama duplikat.
+
+### Part B — Analytics
+
+- Menghitung rata-rata level menggunakan `getAverageLevel()`.
+- Mencari karakter berdasarkan tipe menggunakan `findByType()`.
+- Menggunakan atribut static untuk menghitung jumlah karakter yang berhasil ditambahkan.
+
+### Part C — Fitur Mandiri
+
+Fitur tambahan yang dibuat adalah `findStrongest()`.
+
+Method ini digunakan untuk mencari karakter dengan nilai attack tertinggi dari seluruh karakter yang tersimpan. Jika daftar karakter kosong, method mengembalikan `null`.
+
+Fitur ini membantu pengguna mengetahui karakter yang memiliki kekuatan serangan paling tinggi.
+
+## Screenshot Output TP5
+
+## Screenshot Output TP5
+
+### Screenshot 1 — Pengujian CRUD dan Analytics
+
+![Output TP5 Bagian 1](CharacterManager/output-tp5-1.png)
+
+### Screenshot 2 — Find Strongest, Defensive Copy, dan Pengujian List Kosong
+
+![Output TP5 Bagian 2](CharacterManager/output-tp5-2.png)
+
+Screenshot menampilkan hasil pengujian fitur Character Manager TP5, termasuk penambahan karakter, penolakan duplikat, equals, analytics, findStrongest, defensive copy, dan penghapusan karakter.
+
+## Link Google Docs TP5 — Bagian D
+[Klik di sini untuk membuka Analisis TP5](https://docs.google.com/document/d/1lJy19MVq7iY5ljzIRNj-N8Visfn0v4yWNbvMsK9RAxE/edit?usp=sharing)
