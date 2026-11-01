@@ -1,10 +1,13 @@
+
 package com.unpri.charactermanager;
 
 import com.unpri.charactermanager.model.Character;
 import com.unpri.charactermanager.model.CharacterType;
 import com.unpri.charactermanager.model.CharacterManager;
+import com.unpri.charactermanager.view.MainWindow;
 
 import java.util.ArrayList;
+import javax.swing.SwingUtilities;
 
 public class Main {
 
@@ -165,5 +168,47 @@ public class Main {
                 + CharacterManager.getTotalCharacterCreated());
 
         System.out.println("\n===== PROGRAM SELESAI =====");
+
+        // =====================================
+        // BAGIAN TP8 - GUI CHARACTER MANAGER
+        // =====================================
+
+        System.out.println("\n===== TP8: GUI CHARACTER MANAGER =====");
+
+        CharacterManager guiManager = new CharacterManager();
+
+        // Menambahkan 4 karakter dari TP3
+        guiManager.addCharacter(c1);
+        guiManager.addCharacter(c2);
+        guiManager.addCharacter(c3);
+        guiManager.addCharacter(c4);
+
+        // Karakter baru pertama
+        Character c5 = new Character(
+                "Thor",
+                CharacterType.WARRIOR,
+                6
+        );
+
+        guiManager.addCharacter(c5);
+
+        // Karakter baru kedua
+        Character c6 = new Character(
+                "Gandalf",
+                CharacterType.MAGE,
+                7
+        );
+
+        guiManager.addCharacter(c6);
+
+        // Menjalankan GUI melalui Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+
+            MainWindow window = new MainWindow(
+                    guiManager.getAllCharacters()
+            );
+
+            window.setVisible(true);
+        });
     }
 }

@@ -101,3 +101,61 @@ Screenshot menampilkan hasil pengujian fitur Character Manager TP5, termasuk pen
 ## Link Google Docs TP5 — Bagian D
 
 https://docs.google.com/document/d/1lJy19MVq7iY5ljzIRNj-N8Visfn0v4yWNbvMsK9RAxE/edit?usp=sharing
+
+---
+
+# TP8 — Character Manager Sprint #3
+
+## Deskripsi TP8
+
+TP8 merupakan pengembangan lanjutan dari proyek Character Manager dengan menerapkan konsep Graphical User Interface (GUI) menggunakan Java Swing. Program menampilkan daftar karakter secara dinamis melalui jendela aplikasi serta menyediakan informasi jumlah karakter dan rata-rata level.
+
+## Part A — GUI Character Manager
+
+Fitur yang dikembangkan:
+
+- Membuat jendela aplikasi menggunakan `JFrame`.
+- Menampilkan judul aplikasi Character Manager.
+- Menampilkan daftar karakter menggunakan `JLabel`.
+- Menggunakan `JPanel` untuk mengatur tata letak komponen.
+- Menggunakan `JScrollPane` agar daftar karakter dapat digulir.
+- Menampilkan data karakter secara dinamis menggunakan perulangan.
+- Menjalankan GUI menggunakan `SwingUtilities.invokeLater()`.
+
+## Part B — Penambahan Karakter dan Statistik
+
+Program menampilkan enam karakter:
+
+1. Aragorn — WARRIOR
+2. Merlin — MAGE
+3. Legolas — ARCHER
+4. Luna — HEALER
+5. Thor — WARRIOR
+6. Gandalf — MAGE
+
+Dua karakter baru yang ditambahkan adalah:
+
+- **Thor:** Karakter bertipe WARRIOR dengan level 6.
+- **Gandalf:** Karakter bertipe MAGE dengan level 7.
+
+Program juga menampilkan jumlah seluruh karakter dan rata-rata level karakter secara otomatis.
+
+## Screenshot Output TP8
+
+### Screenshot 1 — Sebelum Penambahan Karakter Kedua
+
+![Screenshot TP8 5 Karakter](CharacterManager/output-tp8-5-character.png)
+
+### Screenshot 2 — Setelah Penambahan Karakter
+
+![Screenshot TP8 6 Karakter](CharacterManager/output-tp8-6-character.png)
+
+Kedua screenshot memperlihatkan perubahan jumlah karakter dan statistik rata-rata level setelah penambahan karakter.
+
+## Alur Program dan Konsep MVC
+
+Alur program dimulai dari `Main.java` yang membuat data karakter dan mengirimkannya kepada `CharacterManager` untuk dikelola. Selanjutnya, `MainWindow` menerima daftar karakter tersebut dan menampilkannya menggunakan komponen Java Swing. `CharacterManager` berperan sebagai bagian dari Model yang mengelola data karakter, sedangkan `MainWindow` berperan sebagai View yang bertanggung jawab menampilkan informasi kepada pengguna. Dengan demikian, pengelolaan data dan tampilan program dipisahkan agar struktur aplikasi lebih terorganisasi.
+
+## Link Google Docs TP8 — Bagian D
+
+https://docs.google.com/document/d/1mUmBmheenbeDq7eyYeXH-17PNsdARNqkBXfacjIZFLU/edit?usp=sharing
