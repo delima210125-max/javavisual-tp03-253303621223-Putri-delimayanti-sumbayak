@@ -2,85 +2,134 @@
 package com.unpri.charactermanager.view;
 
 import com.unpri.charactermanager.model.Character;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
 public class MainWindow extends JFrame {
 
+    // Konstanta batas level tinggi
+    private static final int HIGH_LEVEL_THRESHOLD = 5;
+
     public MainWindow(List<Character> characters) {
 
-        setTitle("Character Manager - TP8 AP10");
+        setTitle("Character Manager - TP10 AP13");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(550, 400);
-        setLocationRelativeTo(null);
 
         // Panel utama
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
-        mainPanel.setBorder(
-            BorderFactory.createEmptyBorder(15, 15, 15, 15)
+        mainPanel.setBackground(AppTheme.BACKGROUND);
+        mainPanel.setBorder(AppTheme.MAIN_BORDER);
+
+        // Judul aplikasi
+        JLabel title = new JLabel(
+                "CHARACTER MANAGER",
+                SwingConstants.CENTER
         );
 
-        // Judul
-        JLabel title = new JLabel(
-            "DAFTAR KARAKTER",
-            SwingConstants.CENTER
-        );
-        title.setFont(new Font("Arial", Font.BOLD, 22));
+        title.setFont(AppTheme.TITLE_FONT);
+        title.setForeground(AppTheme.TEXT);
 
         // Panel daftar karakter
         JPanel listPanel = new JPanel();
         listPanel.setLayout(
-            new BoxLayout(listPanel, BoxLayout.Y_AXIS)
+                new BoxLayout(listPanel, BoxLayout.Y_AXIS)
         );
+        listPanel.setBackground(AppTheme.BACKGROUND);
 
         int totalLevel = 0;
 
         // Menampilkan karakter secara dinamis
         for (Character c : characters) {
 
-            JLabel label = new JLabel(
-                c.getName()
-                + " | Tipe: " + c.getType()
-                + " | Level: " + c.getLevel()
+            // Kartu karakter
+            JPanel card = new JPanel(new BorderLayout(10, 5));
+
+            card.setBackground(AppTheme.colorFor(c.getType()));
+            card.setOpaque(true);
+            card.setBorder(AppTheme.CARD_BORDER);
+
+            // Nama dan role
+            JLabel nameLabel = new JLabel(
+                    c.getName() + " | " + c.getType()
             );
 
-            label.setFont(new Font("Arial", Font.PLAIN, 15));
-            label.setBorder(
-                BorderFactory.createEmptyBorder(8, 5, 8, 5)
+            nameLabel.setFont(AppTheme.BODY_FONT);
+            nameLabel.setForeground(AppTheme.TEXT);
+
+            // Level karakter
+            JLabel levelLabel = new JLabel(
+                    "Level: " + c.getLevel()
             );
 
-            listPanel.add(label);
+            levelLabel.setFont(AppTheme.BODY_FONT);
+            levelLabel.setForeground(AppTheme.MUTED);
+
+            // Mini-Challenge: level 5 ke atas berwarna emas dan tebal
+            if (c.getLevel() >= HIGH_LEVEL_THRESHOLD) {
+                levelLabel.setFont(AppTheme.HIGHLIGHT_FONT);
+                levelLabel.setForeground(AppTheme.GOLD);
+            }
+
+            // Properti tambahan 1: Tooltip
+            card.setToolTipText(
+                    "Nama: " + c.getName()
+                    + " | Role: " + c.getType()
+                    + " | Level: " + c.getLevel()
+            );
+
+            // Properti tambahan 2: Status aktif/nonaktif
+            // Karakter level 1 dibuat nonaktif
+            card.setEnabled(c.getLevel() != 1);
+
+            // Menyusun isi kartu
+            card.add(nameLabel, BorderLayout.CENTER);
+            card.add(levelLabel, BorderLayout.EAST);
+
+            card.setMaximumSize(
+                    new Dimension(Integer.MAX_VALUE, 65)
+            );
+
+            listPanel.add(card);
+            listPanel.add(Box.createVerticalStrut(8));
 
             totalLevel += c.getLevel();
         }
 
         // Menghitung rata-rata level
         double average = characters.isEmpty()
-            ? 0
-            : (double) totalLevel / characters.size();
+                ? 0
+                : (double) totalLevel / characters.size();
 
         // Statistik karakter
         JLabel statistics = new JLabel(
-            String.format(
-                "Total: %d karakter | Rata-rata level: %.2f",
-                characters.size(), average
-            ),
-            SwingConstants.CENTER
+                String.format(
+                        "Total: %d karakter | Rata-rata level: %.2f",
+                        characters.size(), average
+                ),
+                SwingConstants.CENTER
         );
 
-        statistics.setFont(
-            new Font("Arial", Font.BOLD, 14)
-        );
+        statistics.setFont(AppTheme.BODY_FONT);
+        statistics.setForeground(AppTheme.TEXT);
 
-        // Menyusun tampilan
+        // Menyusun tampilan utama
         mainPanel.add(title, BorderLayout.NORTH);
+
         mainPanel.add(
-            new JScrollPane(listPanel),
-            BorderLayout.CENTER
+                new JScrollPane(listPanel),
+                BorderLayout.CENTER
         );
+
         mainPanel.add(statistics, BorderLayout.SOUTH);
 
+        mainPanel.setPreferredSize(new Dimension(550, 400));
+
         setContentPane(mainPanel);
+
+        // Menyesuaikan ukuran jendela
+        pack();
+        setLocationRelativeTo(null);
     }
 }
