@@ -159,3 +159,39 @@ Alur program dimulai dari `Main.java` yang membuat data karakter dan mengirimkan
 ## Link Google Docs TP8 — Bagian D
 
 https://docs.google.com/document/d/1mUmBmheenbeDq7eyYeXH-17PNsdARNqkBXfacjIZFLU/edit?usp=sharing
+
+
+## TP10 / AP13 — Character Manager Sprint #4
+
+### A. Theme Application
+
+Pada Sprint #4, aplikasi Character Manager dikembangkan menggunakan `AppTheme.java` untuk mengatur warna, font, dan border secara terpusat.
+
+Warna kartu karakter dibedakan berdasarkan role, yaitu Warrior, Mage, Archer, dan Healer. Karakter dengan level 5 atau lebih ditampilkan menggunakan tulisan berwarna emas dan tebal.
+
+### B. Additional Component Properties
+
+Dua properti tambahan yang diterapkan:
+
+1. **ToolTipText**: Menampilkan informasi nama, role, dan level karakter ketika kursor diarahkan ke kartu karakter.
+2. **setEnabled()**: Mengatur status kartu karakter. Karakter level 1 dibuat nonaktif, sedangkan karakter dengan level selain 1 tetap aktif.
+
+### C. Before and After Screenshots
+
+**Before v0.3**
+
+![Before v0.3](output-tp10-before-v03.png)
+
+**After v0.4**
+
+![After v0.4](output-tp10-after-v04.png)
+
+### D. Alasan Penggunaan AppTheme
+
+Warna dan font diletakkan di dalam `AppTheme` agar pengaturan tampilan aplikasi terpusat. Dengan demikian, perubahan warna atau font dapat dilakukan tanpa mengubah banyak bagian kode pada `MainWindow`. Selain itu, pemisahan ini membuat kode lebih rapi dan mudah dipelihara. `Character` tetap berfokus pada data karakter, bukan pengaturan tampilan antarmuka.
+
+### E. Google Docs Analysis
+
+Link analisis MVC TP10:
+
+https://docs.google.com/document/d/1-1BUKcBtbi5EZfmiaDz3Ju-3jSChFWF1NBb_PK7G-xs/edit?usp=sharing
