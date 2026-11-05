@@ -50,6 +50,9 @@ public class MainWindow extends JFrame {
             card.setOpaque(true);
             card.setBorder(AppTheme.CARD_BORDER);
 
+            // Properti tambahan: kursor tangan
+            card.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
             // Nama dan role
             JLabel nameLabel = new JLabel(
                     c.getName() + " | " + c.getType()
@@ -72,14 +75,14 @@ public class MainWindow extends JFrame {
                 levelLabel.setForeground(AppTheme.GOLD);
             }
 
-            // Properti tambahan 1: Tooltip
+            // Properti tambahan: Tooltip
             card.setToolTipText(
                     "Nama: " + c.getName()
                     + " | Role: " + c.getType()
                     + " | Level: " + c.getLevel()
             );
 
-            // Properti tambahan 2: Status aktif/nonaktif
+            // Status aktif/nonaktif
             // Karakter level 1 dibuat nonaktif
             card.setEnabled(c.getLevel() != 1);
 
@@ -130,6 +133,7 @@ public class MainWindow extends JFrame {
 
         // Menyesuaikan ukuran jendela
         pack();
+        setMinimumSize(new Dimension(420, 300));
         setLocationRelativeTo(null);
     }
 }
