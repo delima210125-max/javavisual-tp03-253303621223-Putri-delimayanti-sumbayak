@@ -198,3 +198,119 @@ Warna dan font diletakkan di dalam `AppTheme` agar pengaturan tampilan aplikasi 
 ## E. Google Docs Analysis
 
 https://docs.google.com/document/d/1-1BUKcBtbi5EZfmiaDz3Ju-3jSChFWF1NBb_PK7G-xs/edit?usp=sharing
+
+---
+
+
+---
+
+# TP12 — Character Manager Sprint #5
+## Layout, UI Responsif & Analisis MVC
+
+**Mata Kuliah:** Java Visual (SIH-6406)
+
+**CPMK:** 2 — SCPMK 5
+
+**Program Studi:** Sistem Informasi
+
+**Universitas:** Universitas Prima Indonesia
+
+**Nama:** Putri Delimayanti Sumbayak
+
+### A. Implementasi Layout
+
+Pada TP12 ini, aplikasi Character Manager dikembangkan menggunakan Java Swing dengan menerapkan beberapa Layout Manager agar tampilan lebih terstruktur dan dapat menyesuaikan ukuran jendela.
+
+Implementasi yang dilakukan:
+
+1. Menggunakan `BorderLayout` sebagai layout utama.
+2. Menempatkan header pada bagian NORTH.
+3. Menampilkan daftar karakter pada bagian CENTER menggunakan `JScrollPane`.
+4. Menempatkan legenda role pada bagian EAST menggunakan `BoxLayout`.
+5. Menempatkan status bar pada bagian SOUTH.
+6. Menggunakan `GridLayout(2, 2)` untuk panel statistik.
+7. Menggunakan `CharacterType.values()` untuk menghasilkan legenda role secara otomatis.
+8. Menggunakan `VerticalStrut` dan `VerticalGlue` untuk mengatur jarak pada legenda.
+9. Menggunakan `pack()` untuk menyesuaikan ukuran awal jendela.
+10. Mengatur ukuran minimum jendela agar tampilan tetap dapat digunakan.
+
+### B. Perluasan dan Mini-Challenge
+
+Pada Sprint #5, aplikasi dikembangkan dengan beberapa penambahan:
+
+- Status bar menampilkan jumlah karakter di sebelah kiri.
+- Versi aplikasi `v0.5` ditampilkan di sebelah kanan.
+- Menampilkan minimal 8 karakter dengan variasi level dan role.
+- Menambahkan panel statistik yang menampilkan total karakter, rata-rata level, level tertinggi, dan jumlah role.
+- Menambahkan scrollbar agar daftar karakter tetap dapat diakses ketika jendela diperkecil.
+
+**Alasan Pemilihan GridLayout**
+
+Saya memilih `GridLayout(2, 2)` untuk panel statistik karena empat informasi dapat disusun menjadi dua baris dan dua kolom dengan ukuran yang teratur. Layout ini memudahkan pengguna membaca informasi statistik secara bersamaan.
+
+**Layout yang Ditolak**
+
+Saya tidak memilih `FlowLayout` untuk panel statistik karena susunan komponennya mengikuti aliran dari kiri ke kanan dan dapat berpindah baris ketika ruang tidak mencukupi. Untuk empat informasi statistik, `GridLayout` lebih sesuai karena memberikan susunan yang konsisten.
+
+### C. Wireframe Aplikasi
+
+Berikut gambaran struktur tampilan Character Manager TP12:
+
+```text
++------------------------------------------------------+
+|                       HEADER                         |
+|                  CHARACTER MANAGER                   |
+|------------------------------------------------------|
+|                  PANEL STATISTIK                     |
+|  Total Karakter  |  Rata-rata Level                  |
+|  Level Tertinggi |  Jumlah Role                      |
+|------------------------------------------------------|
+|                       |                              |
+|   DAFTAR KARAKTER     |       LEGENDA ROLE            |
+|                       |                              |
+|   +----------------+  |       WARRIOR                 |
+|   | Karakter 1     |  |       MAGE                    |
+|   +----------------+  |       ARCHER                  |
+|   | Karakter 2     |  |       HEALER                  |
+|   +----------------+  |                              |
+|   | Karakter lain  |  |                              |
+|   +----------------+  |                              |
+|        SCROLLBAR     |                              |
+|------------------------------------------------------|
+| Status: 8 karakter dimuat                    v0.5    |
++------------------------------------------------------+
+```
+
+### D. Screenshot Tampilan Program
+
+**1. Tampilan Awal**
+
+![TP12 Initial](CharacterManager/tp12-initial.png)
+
+**2. Tampilan Jendela Diperlebar**
+
+![TP12 Wide](CharacterManager/tp12-wide.png)
+
+**3. Tampilan Jendela Diperkecil**
+
+![TP12 Narrow](CharacterManager/tp12-narrow.png)
+
+### E. Tabel Pengamatan Resize
+
+| Kondisi | Prediksi | Hasil Pengamatan |
+|---|---|---|
+| Ukuran awal | Semua panel terlihat sesuai ukuran awal aplikasi. | Tampilan awal menampilkan bagian utama Character Manager. |
+| Jendela diperlebar | Area CENTER menyesuaikan ruang yang tersedia. | Daftar karakter memperoleh ruang tampilan lebih luas. |
+| Jendela diperkecil | Area daftar menjadi lebih terbatas dan scrollbar digunakan. | Scrollbar terlihat sehingga karakter lainnya tetap dapat diakses. |
+
+### F. Struktur Panel Bersarang
+
+Aplikasi menggunakan `mainPanel` sebagai panel utama dengan `BorderLayout`. Di dalamnya terdapat `northPanel` yang berisi judul aplikasi dan `statsPanel` untuk menampilkan statistik menggunakan `GridLayout`. Bagian CENTER menggunakan `JScrollPane` yang membungkus `listWrapper`, kemudian `listWrapper` menampung `cardsPanel` berisi kartu karakter. Sementara itu, `legendPanel` berada di EAST dan `statusPanel` berada di SOUTH untuk menampilkan legenda role serta informasi status aplikasi.
+
+### G. Analisis Layout dan MVC
+
+Analisis lengkap mengenai Layout Manager, BorderLayout, GridLayout, BoxLayout, pemisahan Model dan View, serta penggunaan `revalidate()` dan `repaint()` dapat dibaca melalui Google Docs berikut:
+
+### Link Google Docs — Bagian D
+
+[Klik di sini untuk membuka Google Docs Analisis TP12 AP16](https://docs.google.com/document/d/1VM3s_W9kmXfmhudWVVVtiU2i6x98qBsikDyWJ6f7fnE/edit?usp=sharing)

@@ -19,6 +19,8 @@ public class AppTheme {
     public static final Color MUTED = new Color(110, 120, 135);
     public static final Color BORDER_COLOR = new Color(220, 225, 232);
     public static final Color GOLD = new Color(190, 140, 20);
+    public static final Color BG_STATUS = Color.decode("#0d0d1a");
+    public static final Color TEXT_MUTED = Color.decode("#9d9dbf");
 
     // ===============================
     // FONT APLIKASI

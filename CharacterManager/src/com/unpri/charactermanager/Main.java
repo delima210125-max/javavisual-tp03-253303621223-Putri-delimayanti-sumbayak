@@ -49,7 +49,6 @@ public class Main {
 
         System.out.println("\n===== TP5: CHARACTER MANAGER =====");
 
-        // CREATE
         System.out.println("\n--- CREATE ---");
 
         System.out.println("Aragorn: " + manager.addCharacter(c1));
@@ -57,7 +56,6 @@ public class Main {
         System.out.println("Legolas: " + manager.addCharacter(c3));
         System.out.println("Luna: " + manager.addCharacter(c4));
 
-        // UJI DUPLIKAT
         System.out.println("\n--- UJI DUPLIKAT ---");
 
         Character duplicate = new Character("Aragorn", CharacterType.MAGE);
@@ -68,7 +66,6 @@ public class Main {
         System.out.println("Total karakter: "
                 + manager.getTotalCharacters());
 
-        // UJI EQUALS
         System.out.println("\n--- UJI EQUALS ---");
 
         Character anotherAragorn =
@@ -80,7 +77,6 @@ public class Main {
         System.out.println("Apakah objek Aragorn sama? "
                 + (c1 == anotherAragorn));
 
-        // UJI OBJECT REFERENCE
         System.out.println("\n--- UJI OBJECT REFERENCE ---");
 
         Character a = new Character("Aragorn", CharacterType.WARRIOR);
@@ -91,27 +87,22 @@ public class Main {
         System.out.println("Level melalui a: " + a.getLevel());
         System.out.println("Apakah a dan b objek yang sama? " + (a == b));
 
-        // READ
         System.out.println("\n--- READ: DAFTAR KARAKTER ---");
 
         for (Character character : manager.getAllCharacters()) {
             System.out.println(character);
         }
 
-        // FIND BY NAME
         System.out.println("\n--- FIND BY NAME ---");
 
         Character found = manager.findByName("Merlin");
-
         System.out.println("Karakter ditemukan: " + found);
 
-        // AVERAGE LEVEL
         System.out.println("\n--- AVERAGE LEVEL ---");
 
         System.out.println("Rata-rata level: "
                 + manager.getAverageLevel());
 
-        // FIND BY TYPE
         System.out.println("\n--- FIND BY TYPE: MAGE ---");
 
         ArrayList<Character> mages =
@@ -121,14 +112,11 @@ public class Main {
             System.out.println(mage);
         }
 
-        // FITUR MANDIRI: FIND STRONGEST
         System.out.println("\n--- KARAKTER TERKUAT ---");
 
         Character strongest = manager.findStrongest();
-
         System.out.println("Karakter terkuat: " + strongest);
 
-        // UJI DEFENSIVE COPY
         System.out.println("\n--- UJI DEFENSIVE COPY ---");
 
         ArrayList<Character> salinan = manager.getAllCharacters();
@@ -144,7 +132,6 @@ public class Main {
         System.out.println("Jumlah karakter asli setelah clear salinan: "
                 + manager.getTotalCharacters());
 
-        // DELETE
         System.out.println("\n--- DELETE ---");
 
         System.out.println("Hapus Legolas: "
@@ -153,7 +140,6 @@ public class Main {
         System.out.println("Total karakter setelah dihapus: "
                 + manager.getTotalCharacters());
 
-        // UJI LIST KOSONG
         System.out.println("\n--- UJI DAFTAR KOSONG ---");
 
         CharacterManager managerKosong = new CharacterManager();
@@ -161,7 +147,6 @@ public class Main {
         System.out.println("Rata-rata level daftar kosong: "
                 + managerKosong.getAverageLevel());
 
-        // STATIC
         System.out.println("\n--- TOTAL KARAKTER DIBUAT ---");
 
         System.out.println("Total karakter berhasil ditambahkan: "
@@ -173,33 +158,50 @@ public class Main {
         // BAGIAN TP8 - GUI CHARACTER MANAGER
         // =====================================
 
-        System.out.println("\n===== TP8: GUI CHARACTER MANAGER =====");
+        System.out.println("\n===== TP12 AP16: GUI CHARACTER MANAGER =====");
 
         CharacterManager guiManager = new CharacterManager();
 
-        // Menambahkan 4 karakter dari TP3
+        // Empat karakter awal
         guiManager.addCharacter(c1);
         guiManager.addCharacter(c2);
         guiManager.addCharacter(c3);
         guiManager.addCharacter(c4);
 
-        // Karakter baru pertama
+        // Karakter kelima
         Character c5 = new Character(
                 "Thor",
                 CharacterType.WARRIOR,
                 6
         );
-
         guiManager.addCharacter(c5);
 
-        // Karakter baru kedua
+        // Karakter keenam
         Character c6 = new Character(
                 "Gandalf",
                 CharacterType.MAGE,
                 7
         );
-
         guiManager.addCharacter(c6);
+
+        // Karakter ketujuh
+        Character c7 = new Character(
+                "Athena",
+                CharacterType.ARCHER,
+                4
+        );
+        guiManager.addCharacter(c7);
+
+        // Karakter kedelapan
+        Character c8 = new Character(
+                "Bima",
+                CharacterType.WARRIOR,
+                8
+        );
+        guiManager.addCharacter(c8);
+
+        System.out.println("Jumlah karakter GUI: "
+                + guiManager.getTotalCharacters());
 
         // Menjalankan GUI melalui Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
