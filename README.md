@@ -311,6 +311,6 @@ Aplikasi menggunakan `mainPanel` sebagai panel utama dengan `BorderLayout`. Di d
 
 Analisis lengkap mengenai Layout Manager, BorderLayout, GridLayout, BoxLayout, pemisahan Model dan View, serta penggunaan `revalidate()` dan `repaint()` dapat dibaca melalui Google Docs berikut:
 
-### Link Google Docs — Bagian D
+### Link Google Docs 
 
 [Klik di sini untuk membuka Google Docs Analisis TP12 AP16](https://docs.google.com/document/d/1VM3s_W9kmXfmhudWVVVtiU2i6x98qBsikDyWJ6f7fnE/edit?usp=sharing)
